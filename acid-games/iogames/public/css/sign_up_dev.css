@@ -1,0 +1,290 @@
+body {
+  background: #404552;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  align-items: center;
+}
+
+body .navBarWrapper {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  flex-direction: column;
+  position: fixed;
+  z-index: 100;
+}
+
+body .navBarWrapper .topNavBar {
+  background-color: #21242c;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  display: flex;
+}
+
+body .navBarWrapper .topNavBar .devActions {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  flex-direction: row-reverse;
+}
+
+body .navBarWrapper .topNavBar .logoArea {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: start;
+}
+
+body .navBarWrapper .topNavBar .logoArea .logo {
+  margin-left: 11px;
+  flex-shrink: 0;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+
+body .navBarWrapper .topNavBar .logoArea .logo:hover {
+  transform: scale(0.9);
+}
+
+body .navBarWrapper .topNavBar .logoArea .svg8 {
+  transform: scale(0.9);
+  margin-left: 7%;
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+
+body .navBarWrapper .topNavBar .logoArea .svg8:hover {
+  transform: scale(0.7);
+}
+
+body .navBarWrapper .coloredLine {
+  height: 3px;
+  background: #84ff32;
+  background: -moz-linear-gradient(left, #84ff32 0%, #177726 23%, #751ebc 50%, #5424e5 73%, #ff2323 100%);
+  background: -webkit-linear-gradient(left, #84ff32 0%, #177726 23%, #751ebc 50%, #5424e5 73%, #ff2323 100%);
+  background: linear-gradient(to right, #84ff32 0%, #20d37f 23%, #fffb00 50%, #5424e5 73%, #ff2323 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84ff32', endColorstr='#ff2323',GradientType=1 );
+  box-shadow: 0px 3px 8px black;
+}
+
+body .formWrapper {
+  margin-top: 150px;
+  background-color: #2d3039;
+  padding: 28px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 5px #0d0e0d;
+  color: white;
+  background-color: #2d3039;
+  box-shadow: 0px -3px 0px #addb78, 0px 5px 0px #22262f;
+  border-radius: 3px;
+}
+
+body .formWrapper .login {
+  display: inline;
+  color: white;
+  padding: 5px;
+  background-color: #1f6b9e;
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+body .formWrapper .login:hover {
+  background-color: #10476b;
+}
+
+body .formWrapper .signUpForm {
+  margin-bottom: 30px;
+  line-height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 1em;
+}
+
+body .formWrapper .signUpForm .submitButton {
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 200px;
+  background-color: #1f9e50;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+}
+
+body .formWrapper .signUpForm .submitButton:hover {
+  background-color: #15773a;
+}
+
+body .footer {
+  flex: 1;
+  background-color: #404552;
+  display: flex;
+  width: 100%;
+  color: white;
+  flex-direction: column-reverse;
+}
+
+body .footer .footerContent {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #21242c;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body .footer .coloredLine {
+  height: 3px;
+  background: #84ff32;
+  background: -moz-linear-gradient(left, #84ff32 0%, #177726 23%, #751ebc 50%, #5424e5 73%, #ff2323 100%);
+  background: -webkit-linear-gradient(left, #84ff32 0%, #177726 23%, #751ebc 50%, #5424e5 73%, #ff2323 100%);
+  background: linear-gradient(to right, #84ff32 0%, #20d37f 23%, #fffb00 50%, #5424e5 73%, #ff2323 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84ff32', endColorstr='#ff2323',GradientType=1 );
+  box-shadow: 0px 3px 8px black;
+}
+
+input, textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0 0 5px #51ee85;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #51ee85;
+}
+
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  flex-shrink: 0;
+  height: 48px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 48px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+  color: white;
+  background-color: #21242c;
+  transition: 0.2s background-color;
+}
+
+a {
+  color: #73d699;
+}
+
+a.button:hover {
+  background-color: #484c58;
+}
+
+.flask {
+  fill: #cb006c;
+  animation: color-flask infinite 30s linear alternate;
+}
+
+@-webkit-keyframes color-flask {
+  0% {
+    fill: #cb006c;
+  }
+  20% {
+    fill: #cb7500;
+  }
+  40% {
+    fill: #00cb80;
+  }
+  60% {
+    fill: #9e5ad1;
+  }
+  80% {
+    fill: #41e265;
+  }
+  100% {
+    fill: #e9e35c;
+  }
+}
+
+@-moz-keyframes color-flask {
+  0% {
+    fill: #cb006c;
+  }
+  20% {
+    fill: #cb7500;
+  }
+  40% {
+    fill: #00cb80;
+  }
+  60% {
+    fill: #9e5ad1;
+  }
+  80% {
+    fill: #41e265;
+  }
+  100% {
+    fill: #e9e35c;
+  }
+}
+
+@-o-keyframes color-flask {
+  0% {
+    fill: #cb006c;
+  }
+  20% {
+    fill: #cb7500;
+  }
+  40% {
+    fill: #00cb80;
+  }
+  60% {
+    fill: #9e5ad1;
+  }
+  80% {
+    fill: #41e265;
+  }
+  100% {
+    fill: #e9e35c;
+  }
+}
+
+@keyframes color-flask {
+  0% {
+    fill: #cb006c;
+  }
+  20% {
+    fill: #cb7500;
+  }
+  40% {
+    fill: #00cb80;
+  }
+  60% {
+    fill: #9e5ad1;
+  }
+  80% {
+    fill: #41e265;
+  }
+  100% {
+    fill: #e9e35c;
+  }
+}

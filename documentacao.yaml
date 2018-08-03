@@ -1,0 +1,290 @@
+swagger: '2.0'
+info:
+  description: "The project will consist of a platform for online gaming. Users will be able to play games. Made by http://www.vitorbichara.com/"
+  version: "1.0.0"
+  title: "Online Gaming Platform"
+  contact: 
+      email: "vitor.bichara@sempreceub.com"
+      
+  #host: "not defined yet"
+
+tags:
+- name: developers
+  description: Operations about developers login and register
+- name: category
+  description: Operations about games' category
+- name: game
+  description: Operations about games
+- name: developer
+  description: Operations about logged developer's actions
+
+
+paths:
+  /developer/dashboard:
+    get:
+      tags:
+      - developer
+      summary: List of logged developer's games
+      operationId: listDeveloperGames
+      produces: 
+      - application/json
+      responses:
+        200:
+          description: "Operation succeed"
+        500: 
+          description: "An internal problem has ocurred"
+        403:
+          description: "You don't have acess to this page"
+          
+  /developer/games/new:
+    get:
+      tags:
+      - developer
+      summary: Show form for uploading a new game
+      operationId: showNewGameForm
+      responses:
+        200:
+          description: "Operation succeed"
+        500: 
+          description: "An internal problem has ocurred"
+  
+  /developer/games/new_game:
+    post:
+      tags:
+      - developer
+      summary: Register game to developer's games
+      operationId: registerGame
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: gameRegisterObject
+        required: true
+        schema:
+          type: object
+          properties:
+            title:
+              type: string
+            url:
+              type: string
+            description:
+              type: string
+            category:
+              type: string 
+            thumbnail:
+              type: string
+            owner:
+              type: string
+      responses:
+        200:
+          description: "Operation succeed"
+        400:
+          description: "A validation error has ocurred"
+        500: 
+          description: "An internal problem has ocurred"
+          
+  /developers/register:
+    post:
+      tags:
+      - developers
+      summary: Register a developer
+      operationId: registerDeveloper
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: developerRegisterObject
+        required: true
+        schema:
+          type: object
+          properties:
+            username:
+              type: string
+            password:
+              type: string
+      responses:
+        200:
+          description: "Operation succeed"
+        400:
+          description: "A validation error has ocurred"
+        500:
+          description: "An internal problem has ocurred"
+
+          
+  /developers/sign_up:
+    get:
+      tags:
+      - developers
+      summary: Show register developer form
+      operationId: showSignUpDeveloperForm
+      produces:
+      - application/json
+      responses:
+        200:
+          description: "Operation succeed"
+        500: 
+          description: "An internal problem has ocurred"
+
+          
+  /developers/login:
+    post:
+      tags:
+      - developers
+      summary: Login a developer
+      operationId: loginDeveloper
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: developerLoginObject
+        required: true
+        schema:
+          type: object
+          properties:
+            username:
+              type: string
+            password:
+              type: string
+      responses:
+        200:
+          description: "Operation succeed"
+        500: 
+          description: "An internal problem has ocurred"
+        400:
+          description: "Invalid data format"
+        404:
+          description: "Could not find user"
+          
+  /developers/sign_in:
+    get:
+      tags:
+      - developers
+      summary: Show login developer form
+      operationId: showSignInDeveloperForm
+      responses:
+        200:
+          description: "Operation succeed"
+        500: 
+          description: "An internal problem has ocurred"
+
+          
+  /developers/logout:
+    post:
+      tags:
+      - developers
+      summary: Logout logged developer
+      operationId: logoutnDeveloper
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: developerLogoutObject
+        required: true
+        schema:
+          type: object
+          properties:
+            username:
+              type: string
+      responses:
+        200:
+          description: "Operation succeed"
+        500: 
+          description: "An internal problem has ocurred"
+         
+  /category/{categoryName}:
+    get:
+      tags:
+      - category
+      summary: Lists all games by {categoryName}
+      operationId: listByCategory
+      produces:
+      - application/json
+      parameters: 
+      - in: path
+        name: categoryName
+        required: true
+        type: string
+      responses:
+        200:
+          description: "Operation succeed"
+        500: 
+          description: "An internal problem has ocurred"
+  
+  /{gameTitle}:
+    get:
+      tags:
+      - game
+      summary: Show gameTitle
+      operationId: ShowGame
+      produces:
+      - application/json
+      parameters: 
+      - in: path
+        name: gameTitle
+        required: true
+        type: string
+      responses:
+        200:
+          description: "Operation succeed"
+        500: 
+          description: "An internal problem has ocurred"
+        404:
+          description: "Page not found"
+  /:
+    get:
+      tags:
+      - game
+      summary: ListAllGames
+      operationId: ListAllGames
+      produces:
+      - application/json
+      responses:
+        200:
+          description: "Operation succeed"
+        500: 
+          description: "An internal problem has ocurred"
+          
+  /{gameTitle}/upvote:
+    post:
+        tags:
+        - game
+        summary: Upvote Game
+        operationId: UpvoteGame
+        produces:
+        - application/json
+        parameters: 
+        - in: path
+          name: gameTitle
+          required: true
+          type: string
+        responses:
+          200:
+            description: "Operation succeed"
+          500: 
+            description: "An internal problem has ocurred"
+            
+  /{gameTitle}/downvote:
+    post:
+        tags:
+        - game
+        summary: Downvote Game
+        operationId: DownvoteGame
+        produces:
+        - application/json
+        parameters: 
+        - in: path
+          name: gameTitle
+          required: true
+          type: string
+        responses:
+          200:
+            description: "Operation succeed"
+          500: 
+            description: "An internal problem has ocurred"    
+
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+basePath: /vittis/atividade2/1.0.0
+schemes:
+ - https
+ - http

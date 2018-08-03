@@ -1,0 +1,328 @@
+body {
+  background: #404552;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  align-items: center;
+}
+
+body .navBarWrapper {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  flex-direction: column;
+  position: fixed;
+  z-index: 100;
+}
+
+body .navBarWrapper .topNavBar {
+  background-color: #21242c;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  display: flex;
+}
+
+body .navBarWrapper .topNavBar .devActions {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  flex-direction: row-reverse;
+}
+
+body .navBarWrapper .topNavBar .logoArea {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: start;
+}
+
+body .navBarWrapper .topNavBar .logoArea .logo {
+  margin-left: 11px;
+  flex-shrink: 0;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+
+body .navBarWrapper .topNavBar .logoArea .logo:hover {
+  transform: scale(0.9);
+}
+
+body .navBarWrapper .topNavBar .logoArea .svg8 {
+  transform: scale(0.9);
+  margin-left: 7%;
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+
+body .navBarWrapper .topNavBar .logoArea .svg8:hover {
+  transform: scale(0.7);
+}
+
+body .navBarWrapper .coloredLine {
+  height: 3px;
+  background: #84ff32;
+  background: -moz-linear-gradient(left, #84ff32 0%, #177726 23%, #751ebc 50%, #5424e5 73%, #ff2323 100%);
+  background: -webkit-linear-gradient(left, #84ff32 0%, #177726 23%, #751ebc 50%, #5424e5 73%, #ff2323 100%);
+  background: linear-gradient(to right, #84ff32 0%, #20d37f 23%, #fffb00 50%, #5424e5 73%, #ff2323 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84ff32', endColorstr='#ff2323',GradientType=1 );
+  box-shadow: 0px 3px 8px black;
+}
+
+body .dashboard {
+  box-shadow: 0px 0px 5px 1px black;
+  color: white;
+  font-size: 30px;
+  margin-top: 75px;
+  padding: 15px;
+  background-color: #2d3039;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body .dashboard .dashboardNav {
+  display: flex;
+  font-size: 0.6em;
+}
+
+body .dashboard .dashboardNav > .navButton {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #219245;
+  margin: 20px;
+  max-height: 20px;
+}
+
+body .dashboard .dashboardNav > .navButton:hover {
+  background-color: #5bb377;
+}
+
+body .newGameForm {
+  margin: 20px;
+  padding: 20px;
+  background-color: #2d3039;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 1px black;
+}
+
+body .newGameForm .titleLabel {
+  font-size: 2em;
+}
+
+body .newGameForm .titleLinkArea {
+  display: flex;
+  font-size: 1.1em;
+}
+
+body .newGameForm .titleLinkArea > * {
+  margin: 10px;
+}
+
+body .newGameForm .descriptionArea {
+  display: flex;
+  font-size: 1.1em;
+}
+
+body .newGameForm .descriptionArea > * {
+  margin: 10px;
+}
+
+body .newGameForm .categoriesArea {
+  display: flex;
+}
+
+body .newGameForm .categoriesArea > * {
+  margin: 10px;
+}
+
+body .newGameForm .thumbnailArea {
+  display: flex;
+}
+
+body .newGameForm .thumbnailArea > * {
+  margin: 10px;
+}
+
+body .newGameForm > div {
+  margin: 20px;
+}
+
+input, textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0 0 5px #51ee85;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #51ee85;
+}
+
+* {
+  border: none;
+}
+
+input, button, submit {
+  border: none;
+}
+
+.submitButton {
+  color: white;
+  cursor: pointer;
+  background-color: #38b82c;
+  margin: 20px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.submitButton:hover {
+  background-color: #1a6613;
+}
+
+.logout {
+  color: white;
+  cursor: pointer;
+  background-color: #b87e2c;
+  margin: 20px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.logout:hover {
+  background-color: #c7954f;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  flex-shrink: 0;
+  height: 48px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 48px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+  color: white;
+  background-color: #21242c;
+  transition: 0.2s background-color;
+}
+
+a.button:hover {
+  background-color: #484c58;
+}
+
+.flask {
+  fill: #cb006c;
+  animation: color-flask infinite 30s linear alternate;
+}
+
+@-webkit-keyframes color-flask {
+  0% {
+    fill: #cb006c;
+  }
+  20% {
+    fill: #cb7500;
+  }
+  40% {
+    fill: #00cb80;
+  }
+  60% {
+    fill: #9e5ad1;
+  }
+  80% {
+    fill: #41e265;
+  }
+  100% {
+    fill: #e9e35c;
+  }
+}
+
+@-moz-keyframes color-flask {
+  0% {
+    fill: #cb006c;
+  }
+  20% {
+    fill: #cb7500;
+  }
+  40% {
+    fill: #00cb80;
+  }
+  60% {
+    fill: #9e5ad1;
+  }
+  80% {
+    fill: #41e265;
+  }
+  100% {
+    fill: #e9e35c;
+  }
+}
+
+@-o-keyframes color-flask {
+  0% {
+    fill: #cb006c;
+  }
+  20% {
+    fill: #cb7500;
+  }
+  40% {
+    fill: #00cb80;
+  }
+  60% {
+    fill: #9e5ad1;
+  }
+  80% {
+    fill: #41e265;
+  }
+  100% {
+    fill: #e9e35c;
+  }
+}
+
+@keyframes color-flask {
+  0% {
+    fill: #cb006c;
+  }
+  20% {
+    fill: #cb7500;
+  }
+  40% {
+    fill: #00cb80;
+  }
+  60% {
+    fill: #9e5ad1;
+  }
+  80% {
+    fill: #41e265;
+  }
+  100% {
+    fill: #e9e35c;
+  }
+}

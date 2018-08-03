@@ -1,0 +1,355 @@
+@mixin box-colored-shadow-content($color) {
+    background-color: #333742;
+    box-shadow: 0px -3px 0px $color, 0px 5px 0px #22262f;
+    border-radius: 3px;
+}
+@mixin green-box-label() {
+    cursor: pointer;
+    margin: 8px;
+    background-color: #299e56;
+    border-radius: 3px;
+    padding: 5px;
+    box-shadow: 0px 4px 0px #125a2e;
+    transition: transform 0.2s;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+body {
+    background: #404552;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    align-items: center;
+    color: white;
+    .navBarWrapper {
+        display: flex;
+        width: 100%;
+        height: 50px;
+        flex-direction: column;
+        //Testes Fixed
+            position: fixed;
+            z-index: 100;
+        .topNavBar {
+            //position: fixed;
+            background-color: #21242c;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            //justify-content: space-evenly;
+            display: flex;
+            
+            .devActions {
+                display: flex;
+                align-items: center;
+                width: 50%;
+                flex-direction: row-reverse;
+            }
+            .logoArea {
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                width: 50%;
+                justify-content: start;
+                
+                .logo {
+                    margin-left: 11px;
+                    flex-shrink: 0;
+                    color: white;
+                    font-weight: bold;
+                    font-size: 1.5em;
+                    transition: transform 0.5s;
+                    cursor: pointer;
+                }
+                .logo:hover {
+                    transform: scale(0.9);
+                }
+                .svg8 {
+                    transform: scale(0.9);
+                    margin-left: 7%;
+                    transition: transform 0.5s;
+                    cursor: pointer;
+                }
+                .svg8:hover {
+                    transform: scale(0.7);
+                }
+            }
+            
+
+        }
+        .coloredLine {
+            height: 3px;
+            background: #84ff32;
+            background: -moz-linear-gradient(left, #84ff32 0%, #177726 23%, #751ebc 50%, #5424e5 73%, #ff2323 100%);
+            background: -webkit-linear-gradient(left, #84ff32 0%,#177726 23%,#751ebc 50%,#5424e5 73%,#ff2323 100%);
+            background: linear-gradient(to right, #84ff32 0%,#20d37f 23%,#fffb00 50%,#5424e5 73%,#ff2323 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84ff32', endColorstr='#ff2323',GradientType=1 );            
+            box-shadow: 0px 3px 8px black;
+        }
+    }
+    
+    .dashboard {
+        box-shadow: 0px 0px 5px 1px black;
+        color: white;
+        font-size: 30px;
+        margin-top: 75px;
+        padding: 15px;
+        background-color: #2d3039;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .dashboardNav {
+            display: flex;
+            font-size: 0.6em;
+        }
+        .dashboardNav > .navButton {
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #219245;
+            margin: 20px;
+            max-height: 20px;
+        }
+        .dashboardNav > .navButton:hover {
+            background-color: #5bb377;
+        }
+    }
+    .allWrapper {
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 20px;
+        background-color: green;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        @include box-colored-shadow-content(#ffffff);
+        .gamesWrapper {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            //max-width: 50%;
+            min-height: 10%;
+            //background-color: red;
+            justify-content: center;
+            .gameCardWrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .actions {
+                    display: flex;
+                    .action {
+                        @include green-box-label();
+                        margin-left: 15px;
+                        margin-right: 15px;
+                    }
+                    .edit {
+                        background-color: rgb(59, 123, 196);
+                        box-shadow: 0px 4px 0px rgb(25, 63, 105);
+                    }
+                    .delete {
+                        background-color: rgb(156, 41, 41);
+                        box-shadow: 0px 4px 0px rgb(114, 30, 30);
+                    }
+                    .action:hover {
+                        transform: scale(1.1);
+                    }
+                }
+                
+                .gameCard {
+                    cursor: pointer;
+                    margin: 15px;
+                    margin-top: 10px;
+                    display: flex;
+                    .cardImg {
+                        width: 200px;
+                        //height: 115px;
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
+                        height: 115px;
+                    }
+                    .gameTitle {
+                        padding-top: 2px;
+                        padding-bottom: 2px;
+                        
+                        width: 200px;
+                        background-color: #289451;
+                        text-align: center;
+                        border-bottom-left-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                        box-shadow: 0px 7px 0px #1f7240;
+                        transition: background-color 0.2s, box-shadow 0.2s;
+                    }
+                }
+                .gameCard:hover > a > .gameTitle {
+                    background-color: #5da55d;
+                    box-shadow: 0px 7px 0px #288b2d;
+                }
+            }   
+
+        }
+    }
+    .footer {
+        flex: 1;
+        background-color: #404552;
+        display: flex;
+        width: 100%;
+        color: white;
+        flex-direction: column-reverse;
+        
+        .footerContent {
+            //height: 40px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: #21242c;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .coloredLine {
+            height: 3px;
+            background: #84ff32;
+            background: -moz-linear-gradient(left, #84ff32 0%, #177726 23%, #751ebc 50%, #5424e5 73%, #ff2323 100%);
+            background: -webkit-linear-gradient(left, #84ff32 0%,#177726 23%,#751ebc 50%,#5424e5 73%,#ff2323 100%);
+            background: linear-gradient(to right, #84ff32 0%,#20d37f 23%,#fffb00 50%,#5424e5 73%,#ff2323 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84ff32', endColorstr='#ff2323',GradientType=1 );            
+            box-shadow: 0px 3px 8px black;
+        }
+    }
+
+}
+input, button, submit { border:none; } 
+.logout {
+    color: white;
+    cursor: pointer;
+    background-color: #b87e2c;
+    margin: 20px;
+    border-radius: 5px;
+    padding: 10px;
+}
+.logout:hover {
+    background-color: #c7954f;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+a.linkBom {
+    color: #73d699;
+    text-decoration: underline;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    flex-shrink: 0;
+
+    height: 48px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 48px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    text-decoration: none;
+    color: white;
+    background-color: #21242c;
+    transition: 0.2s background-color;
+}
+
+a.button:hover {
+    background-color: #484c58;
+}
+.flask {
+    fill:#cb006c;
+    animation: color-flask infinite 30s linear alternate;
+}
+
+@-webkit-keyframes color-flask {
+    0% {
+        fill: #cb006c;
+      }
+    20% {
+        fill: #cb7500;
+    }
+    40% {
+        fill:#00cb80 ;
+    }
+    60% {
+        fill: #9e5ad1;
+    }
+    80% {
+        fill:#41e265 ;
+    }
+    100% {
+        fill: #e9e35c;
+    }
+  }
+  @-moz-keyframes color-flask {
+    0% {
+        fill: #cb006c;
+      }
+    20% {
+        fill: #cb7500;
+    }
+    40% {
+        fill:#00cb80 ;
+    }
+    60% {
+        fill: #9e5ad1;
+    }
+    80% {
+        fill:#41e265 ;
+    }
+    100% {
+        fill: #e9e35c;
+    }
+  }
+  @-o-keyframes color-flask {
+    0% {
+        fill: #cb006c;
+      }
+    20% {
+        fill: #cb7500;
+    }
+    40% {
+        fill:#00cb80 ;
+    }
+    60% {
+        fill: #9e5ad1;
+    }
+    80% {
+        fill:#41e265 ;
+    }
+    100% {
+        fill: #e9e35c;
+    }
+  }
+  @keyframes color-flask {
+    0% {
+        fill: #cb006c;
+      }
+    20% {
+        fill: #cb7500;
+    }
+    40% {
+        fill:#00cb80 ;
+    }
+    60% {
+        fill: #9e5ad1;
+    }
+    80% {
+        fill:#41e265 ;
+    }
+    100% {
+        fill: #e9e35c;
+    }
+  }
+
+
+  
